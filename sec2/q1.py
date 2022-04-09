@@ -1,0 +1,5 @@
+x,y=map(int,input('Dimensions of the dungeon:').split()) 
+ar,ac=map(int,input('Position of the adventurer:').split())
+gr,gc=map(int,input('Position of the gold:').split())
+steps = abs(ar-gr)+abs(ac-gc)
+print("Minimum number of steps:",steps)
