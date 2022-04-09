@@ -9,23 +9,36 @@
 # t       y
 #     r     
 
+import math
 def question1():
-  kl = input("Enter the string: ") 
+	s = input("Enter the string: ") 
 
-  if(len(kl)%2==0):
-    print("Not Possible...")
-    question1()
-  else:   
-    n = int(len(kl))
-    row = 1
-    while row <= n:
-        col = 1
-        while col <= n:
-            print(kl[col-1],''*col,end ='')
-            col += 1
-        print()        
-        row+=1
-        pass
-    return
+	slen = len(s)
+
+	if(len(s)%2==0):
+		print("Not Possible...")
+		question1()
+	else:   
+		mid = math.floor(slen/2)
+		i = j = mid
+		is_rev = False
+		while True:
+			if (i == j):
+			  print('{}{}{}'.format(" "*i,s[i]," "*i))
+			if is_rev:
+			  i = i + 1
+			  j = j - 1
+			else:
+			  i = i - 1
+			  j = j + 1
+			if (i == j):
+			  print('{}{}{}'.format(" "*i,s[i]," "*i))
+			else:
+			  print('{}{}{}{}'.format(" "*i,s[i]," "*(j-i-1),s[j]," "*i))
+			if (i == 0):
+			  is_rev = True
+			if (i == j):
+			  break
+		return  
 
 question1()
